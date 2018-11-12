@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>React Workshop</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="./node_modules/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="./theme.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="./node_modules/reveal.js/lib/css/zenburn.css">
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./styles/onedark.css">
+	<style>
+		.pure_img {
+			border: 0px !important;
+			background: transparent !important;
+			box-shadow: none !important;
+		}
+	</style>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+
+			<section data-background-color="#0000" data-background-image="./imgs/bg1.jpg">
+				<img class="rotate" width="180px" src="./imgs/react.png" style="border: none;background-color:transparent">
+				<h2> ReactJS Workshop</h1>
+					<p>Building web apps Using React and redux</p>
+					<p>
+						<small> By
+							<a href="https://Sarath.me">Sarath Kumar</a>
+							</br />
+							<a href="https://Zealmotion.com">Zealmotion interactive</a>
+						</small>
+					</p>
+					<small>Online Slides <a href="https://goo.gl/iS5FCF"> <b style="background: black">goo.gl/iS5FCF</b></a></small>
+			</section>
+
+
+			<section>
+
+				<section>
+					<h3 style="color: #61dafb">Requirements</h3>
+					<ul>
+						<li class="fragment  fade-up">NodeJS</li>
+						<li class="fragment  fade-up">Code editor (vs-code,webstorm , <b>notepad🙄</b> etc... )</li>
+						<li class="fragment  fade-up">Basic knowledge about web ecosystems (html,css,js) </li>
+						<li class="fragment  fade-up">little bit of brain 🧠</li>
+
+					</ul>
+
+				</section>
+
+			</section>
+			<section>
+
+				<section>
+					<h3 style="color: #61dafb">Modern JS</h3>
+
+
+				</section>
+				<section>
+					<h3 style="color: #61dafb">Bundlers 📦</h3>
+
+
+				</section>
+				<section>
+					<h3 style="color: #61dafb">Webpack </h3>
+					<img style="border:0px"" src=" ./imgs/webpack.png" alt="">
+
+				</section>
+
+			</section>
+
+
+			<section>
+
+				<section>
+					<h3 style="color: #61dafb">What Is React?</h3>
+					<ul>
+						<li class="fragment fade">"A Javascript library for creating user interfaces"</li>
+						<li class="fragment fade">"The 'V' in 'MVC'</li>
+						<li class="fragment fade">"A library, not a framework"</li>
+					</ul>
+
+				</section>
+				<section>
+					<h3 style="color: #61dafb">Companies who use React</h3>
+					<ol class="fragment">
+						<li>Instagram</li>
+						<li>Flipkart</li>
+						<li>Netflix</li>
+						<li>Airbnb</li>
+						<li>Facebook</li>
+					</ol>
+
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h3 style="color: #61dafb">Choosing React</h3>
+					<pre class="fragment">
+						<p>Declarative → Predictable → Confidence → Reliability</p>
+ 				  - Tom Occhino's ReactConf keynote
+					</pre>
+
+
+				</section>
+
+			</section>
+
+
+
+			<section>
+
+
+
+				<section>
+					<h4 style="color: #61dafb"> Imperative Code</small>
+						</h2>
+
+
+						<pre class="fragment  fade-up" style="font-size:16px">
+<code>
+		const container = document.getElementById(‘container’);
+		const btn = document.createElement(‘button’);
+		btn.className = ‘btn red’;
+		btn.onclick = function(event) {
+		 if (this.classList.contains(‘red’)) {
+		   this.classList.remove(‘red’);
+		   this.classList.add(‘blue’);
+		 } else {
+		   this.classList.remove(‘blue’);
+		   this.classList.add(‘red’);
+		 }
+		};
+		container.appendChild(btn);
+	</code>
+</pre>
+
+				</section>
+
+				<section>
+					<h4 style="color: #61dafb"> Declarative Code</small>
+						</h2>
+						<pre style="font-size: 14px">
+<code>
+	class Button extends React.Component{
+		
+		this.state = { color: 'red' }
+
+		handleChange = () => {
+		  const color = this.state.color === 'red' ? 'blue' : 'red';
+		  this.setState({ color });
+		}
+
+		render() {
+		  return (<div>
+			<button 
+			   className=`btn ${this.state.color}`
+			   onClick={this.handleChange} >
+			</button>
+		  </div>);
+		}
+	  }							  
+</code>
+					</pre>
+
+
+				</section>
+			</section>
+
+
+			<section>
+
+				<section>
+					<h4 style="color: #61dafb">Let dive in</small>
+				</section>
+				<section>
+					<h4 style="color: #61dafb">React Elements</small>
+					</h4>
+					<pre class="fragment">
+<code>
+  	React.createElement('h2',{},"Hello world");						  
+</code>
+					</pre>
+					<pre class="fragment">
+<code>
+		document.createElement('h1',{})
+</code>
+					</pre>
+
+
+				</section>
+				<section>
+					<h4 style="color: #61dafb">JSX</small>
+					</h4>
+					<pre class="fragment">
+	<code>
+	 React.createElement('h2',{},"Hello world");						  
+	</code>
+						</pre>
+					<pre class="fragment">
+	<code>
+		<h1>Hello world</h1>
+	</code>
+						</pre>
+
+
+				</section>
+
+				<section>
+
+					<iframe width="100%" height="450px" src="https://babeljs.io/repl" frameborder="0"></iframe>
+
+				</section>
+			</section>
+
+
+			</section>
+
+
+
+			<section data-background-color="#fafafa" data-background-transition="zoom">
+				<section>
+					<h4  >The Virtual DOM</h4>
+
+						<img class="pure_img" src="http://www.systango.com/blog/wp-content/uploads/2017/05/img_1-768x287.png" alt="">
+
+				</section>
+				<section>
+						<h4>Reconciliation</h1>
+					<img class="pure_img" src="http://www.systango.com/blog/wp-content/uploads/2017/05/img_2-768x460.png" alt="">
+
+				</section>
+
+			</section>
+
+
+			<section   >
+				<section>
+						<h4 style="color: #61dafb">Component</h4>
+					<pre class="fragment">
+<code>
+	 
+		function App(){
+			return(
+			  <div>
+				<p>Hello world</p>
+			  </div>
+			)
+		}
+
+
+</code>
+					</pre>
+				</section>
+				<section>
+						<h4 style="color: #61dafb">Props</h4>
+					<pre class="fragment">
+<code>
+	 
+function App(props){
+	return(
+	   <div>
+		 <p>Hello world {props.name}</p>
+	   </div>
+	)
+}
+
+
+</code>
+					</pre>
+				</section>
+				<section>
+						<h4 style="color: #61dafb">JSX expression</h4>
+					<pre class="fragment">
+<code>
+	 
+ <div>
+ 	<h2>The total time you need {this.time.remaining}</h2>
+</div>
+</code >
+					</pre>
+					<pre class="fragment">
+<code>
+	 
+ <div>
+ 	<component name={this.name}  ></component>
+</div>
+</code>
+					</pre>
+				</section>
+				<section>
+						<h4 style="color: #61dafb">Higher order components</h4>
+						<p class="fragment">a higher-order component is a function that takes a component and returns a new component</p>
+					<pre class="fragment">
+<code>
+         higherOrderComponent(WrappedComponent);
+</code>
+					</pre>
+				</section>
+
+			</section>
+
+
+			  <section data-background-color="#fafafa" data-background-transition="zoom">
+					<section>
+						<h4  >Redux</h4>
+	
+							<img class="pure_img" src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-L5K1I1WsuQMZ8ecEuWg%2Favatar.png?generation=1518623866348435&alt=media" alt="">
+	
+					</section>
+					<section>
+						<h2>Redux is a predictable state container for JavaScript apps.</h2>	
+					</section>
+					<section>
+							<h4  >Redux</h4>
+		
+								<img class="pure_img" src="https://cdn-images-1.medium.com/max/800/0*cntBtPADjE2ykLSP.png" alt="">
+		
+						</section>
+				</section>
+			   
+			<section>
+				<h5>Thank you...</h5>
+
+			</section>
+
+
+		</div>
+	</div>
+
+	<script src="./node_modules/reveal.js/lib/js/head.min.js"></script>
+	<script src="./node_modules/reveal.js/js/reveal.js"></script>
+
+	<script>
+		function zoomtoCode(id) {
+
+			zoom.to({
+				element: document.getElementById(id),
+				padding: 0,
+			});
+
+
+		}
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+					src: './node_modules/reveal.js/lib/js/classList.js',
+					condition: function () {
+						return !document.body.classList;
+					}
+				},
+				{
+					src: './node_modules/reveal.js/plugin/markdown/marked.js',
+					condition: function () {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: './node_modules/reveal.js/plugin/markdown/markdown.js',
+					condition: function () {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: './node_modules/reveal.js/plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				},
+				{
+					src: './node_modules/reveal.js/plugin/search/search.js',
+					async: true
+				},
+				{
+					src: './node_modules/reveal.js/plugin/zoom-js/zoom.js',
+					async: true
+				},
+				{
+					src: './node_modules/reveal.js/plugin/notes/notes.js',
+					async: true
+				}
+			]
+		});
+	</script>
+
+</body>
+
+</html>
